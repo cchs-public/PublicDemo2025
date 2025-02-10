@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +14,12 @@
       align-items: center;
       flex-direction: column;
       margin: 0;
-      padding: 60px 20px 20px; /* Adjusted padding-top to 60px */
-      overflow-y: auto; /* Allow scrolling */
+      padding: 60px 20px 20px;
+      overflow-y: auto;
       text-align: center;
-      min-height: 100vh; /* Ensure body covers at least the viewport height */
+      min-height: 100vh;
     }
 
-    /* Background Slideshow */
     .slideshow-bg {
       position: fixed;
       top: 0;
@@ -36,9 +34,9 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 200%; /* Make it larger than the viewport */
-      height: 200%; /* Make it taller than the viewport */
-      transform: translate(-50%, -50%); /* Center it while keeping the overflow */
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%);
       border: none;
     }
 
@@ -70,6 +68,11 @@
       margin-bottom: 15px;
     }
 
+    h6 {
+      color: #0077cc;
+      font-size: 25px;
+    }
+
     p {
       font-size: 18px;
       color: #0077cc;
@@ -86,9 +89,12 @@
     }
 
     li {
-      margin: 15px 0;
+      margin: 10px 0;  /* Reduced margin between items */
       display: flex;
       justify-content: center;
+      text-align: left;
+      flex-direction: column;
+      align-items: center;
     }
 
     a {
@@ -129,11 +135,32 @@
         font-size: 20px;
       }
     }
+
+    .team-list {
+      text-align: center;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-list li {
+      margin-bottom: 10px; /* Reduced bottom margin */
+    }
+
+    .team-list .name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .team-list .tasks {
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Google Slides Background -->
   <div class="slideshow-bg">
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQDVRhXZuCqJGmWMWnMHe1vZBonfKJ6O1Ruh3KjWlKkzHR-H-wy4YP9NVoEa3X_R8DPKLLTNh6QSSEq/embed?start=true&loop=true&delayms=3000" allowfullscreen></iframe>
   </div>
@@ -173,52 +200,138 @@
       {
         title: "Slideshow Presentation",
         slideshow: true
+      },
+      {
+        title: "Team Contributions:",
+        text: `
+<ul class="team-list">
+  <li>
+    <p class="name">Alex Convey</p>
+    <p class="tasks">Lead Project Manager</p>
+  </li>
+  <li>
+    <p class="name">Jaxon Head</p>
+    <p class="tasks">Web Developer & Slideshow Coordinator</p>
+  </li>
+  <li>
+    <p class="name">Izabella Andrews</p>
+    <p class="tasks">Slideshow Content Creator & Organizer</p>
+  </li>
+  <li>
+   <p class="name">Jayla McCarty</p>
+    <p class="tasks">Project Planning & Scheduling Lead. Created informational card.</p>
+  </li>
+</ul>
+<p>- Thank you for your attention!</p>
+
+        `
       }
     ];
 
+    let skipDelay = false;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+        skipDelay = true;
+        loadAllContent();
+      }
+    });
+
+    function loadAllContent() {
+      sections.forEach((section, index) => {
+        if (!document.querySelector(`#section-${index}`)) {
+          const div = document.createElement("div");
+          div.className = "container";
+          div.id = `section-${index}`;
+
+          const h1 = document.createElement("h1");
+          h1.textContent = section.title;
+          div.appendChild(h1);
+
+          if (section.text) {
+            const p = document.createElement("p");
+            p.innerHTML = section.text;
+            div.appendChild(p);
+          }
+
+          if (section.links) {
+            const ul = document.createElement("ul");
+            section.links.forEach(link => {
+              const li = document.createElement("li");
+              const a = document.createElement("a");
+              a.href = link.url;
+              a.target = "_blank";
+              a.textContent = link.text;
+              li.appendChild(a);
+              ul.appendChild(li);
+            });
+            div.appendChild(ul);
+          }
+
+          if (section.slideshow) {
+            const iframe = document.createElement("iframe");
+            iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vSj3-bMMQkd_NRgHzzFPLe2q7MJzhkRNYyQu3eUWHS9tGkKgYbVYeAZSE20fb79EO2QRGV56jIjODJh/embed?start=false&loop=true&delayms=60000";
+            iframe.frameBorder = "0";
+            iframe.width = "100%";
+            iframe.height = "500";
+            div.appendChild(iframe);
+          }
+
+          document.body.appendChild(div);
+
+          setTimeout(() => {
+            div.classList.add("fade-in");
+          }, 50);
+        }
+      });
+    }
+
     sections.forEach((section, index) => {
       setTimeout(() => {
-        const div = document.createElement("div");
-        div.className = "container";
+        if (!skipDelay && !document.querySelector(`#section-${index}`)) {
+          const div = document.createElement("div");
+          div.className = "container";
+          div.id = `section-${index}`;
 
-        const h1 = document.createElement("h1");
-        h1.textContent = section.title;
-        div.appendChild(h1);
+          const h1 = document.createElement("h1");
+          h1.textContent = section.title;
+          div.appendChild(h1);
 
-        if (section.text) {
-          const p = document.createElement("p");
-          p.textContent = section.text;
-          div.appendChild(p);
+          if (section.text) {
+            const p = document.createElement("p");
+            p.innerHTML = section.text;
+            div.appendChild(p);
+          }
+
+          if (section.links) {
+            const ul = document.createElement("ul");
+            section.links.forEach(link => {
+              const li = document.createElement("li");
+              const a = document.createElement("a");
+              a.href = link.url;
+              a.target = "_blank";
+              a.textContent = link.text;
+              li.appendChild(a);
+              ul.appendChild(li);
+            });
+            div.appendChild(ul);
+          }
+
+          if (section.slideshow) {
+            const iframe = document.createElement("iframe");
+            iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vSj3-bMMQkd_NRgHzzFPLe2q7MJzhkRNYyQu3eUWHS9tGkKgYbVYeAZSE20fb79EO2QRGV56jIjODJh/embed?start=false&loop=true&delayms=60000";
+            iframe.frameBorder = "0";
+            iframe.width = "100%";
+            iframe.height = "500";
+            div.appendChild(iframe);
+          }
+
+          document.body.appendChild(div);
+
+          setTimeout(() => {
+            div.classList.add("fade-in");
+          }, 50);
         }
-
-        if (section.links) {
-          const ul = document.createElement("ul");
-          section.links.forEach(link => {
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = link.url;
-            a.target = "_blank";
-            a.textContent = link.text;
-            li.appendChild(a);
-            ul.appendChild(li);
-          });
-          div.appendChild(ul);
-        }
-
-        if (section.slideshow) {
-          const iframe = document.createElement("iframe");
-          iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vSj3-bMMQkd_NRgHzzFPLe2q7MJzhkRNYyQu3eUWHS9tGkKgYbVYeAZSE20fb79EO2QRGV56jIjODJh/embed?start=false&loop=true&delayms=60000";
-          iframe.frameBorder = "0";
-          iframe.width = "100%";
-          iframe.height = "500";
-          div.appendChild(iframe);
-        }
-
-        document.body.appendChild(div);
-
-        setTimeout(() => {
-          div.classList.add("fade-in");
-        }, 50);
       }, index * 1000);
     });
   </script>
