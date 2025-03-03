@@ -1,142 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Links Feb 2025</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 0;
-            padding: 60px 20px 20px;
-            overflow-y: auto;
-            text-align: center;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Links Feb 2025</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 60px 20px 20px;
+    overflow-y: auto;
+    text-align: center;
+    min-height: 100vh;
+  }
 
-        .slideshow-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
+  .slideshow-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
 
-        .slideshow-bg iframe {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
-            transform: translate(-50%, -50%);
-            border: none;
-        }
+  .slideshow-bg iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+    border: none;
+  }
 
-        .container {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            padding: 40px;
-            width: 60%;
-            max-width: 800px;
-            text-align: center;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
+  .container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 60%;
+    max-width: 800px;
+    text-align: center;
+    transition: opacity 1s ease, transform 1s ease;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-        .fade-in { opacity: 1; transform: translateY(0); }
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-        h1 { color: #5c6bc0; font-size: 28px; margin-bottom: 15px; }
-        h6, p, .team-list li { font-size: 18px; color: #0077cc; line-height: 1.6; }
-        ul { list-style-type: none; padding: 0; margin: 0; }
+  h1 {
+    color: #5c6bc0;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
 
-        a {
-            text-decoration: none;
-            font-size: 24px;
-            color: #0077cc;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: 1px solid #0077cc;
-            display: block;
-            width: 100%;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
+  h6 {
+    color: #0077cc;
+    font-size: 25px;
+  }
 
-        a:hover { color: #fff; background-color: #0077cc; }
-        a:active { color: #003153; background-color: #004a70; }
+  p {
+    font-size: 18px;
+    color: #0077cc;
+    font-weight: normal;
+    line-height: 1.6;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    text-align: center;
+  }
 
-        @media (max-width: 768px) {
-            .container { width: 90%; padding: 30px; }
-            h1, a { font-size: 20px; }
-        }
-    </style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #0077cc;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #0077cc;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  a:hover {
+    color: #fff;
+    background-color: #0077cc;
+  }
+
+  a:active {
+    color: #003153;
+    background-color: #004a70;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    a {
+      font-size: 20px;
+    }
+  }
+
+  .team-list {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-list li {
+    margin-bottom: 10px;
+  }
+
+  .team-list .name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .team-list .tasks {
+    font-size: 18px;
+  }
+</style>
+
 </head>
-
 <body>
-    <div class="slideshow-bg">
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQDVRhXZuCqJGmWMWnMHe1vZBonfKJ6O1Ruh3KjWlKkzHR-H-wy4YP9NVoEa3X_R8DPKLLTNh6QSSEq/embed?start=true&loop=true&delayms=3000" allowfullscreen></iframe>
-    </div>
 
-    <script>
-        const sections = [
-            { title: "Intro to the Links", text: "These links refer to the resources we presented. You may access them at any time if you would like." },
-            { title: "Demo and Resources", links: [{ text: "ChatGPT Demo", url: "https://www.chatgpt.com" }, { text: "AI Images Demo", url: "https://www.freepik.com/pikaso/ai-image-generator?style=noStyle&log-in=google" }, { text: "Speech to Text Demo", url: "https://www.speechtexter.com/" }] },
-            { title: "Google Arts & Culture", links: [{ text: "Games Home Menu", url: "https://artsandculture.google.com/play?hl=en" }, { text: "In the Rhythm with Nature", url: "https://artsandculture.google.com/experiment/in-rhythm-with-nature/1AHie_rumRxQOA?hl=en" }, { text: "Guess the Line", url: "https://artsandculture.google.com/experiment/guess-the-line/ogH0ouxdq_sR6w" }, { text: "Cultural Crosswords", url: "https://artsandculture.google.com/experiment/cultural-crosswords/JgGaXxGHVxpn4A" }, { text: "3D Pottery", url: "https://artsandculture.google.com/experiment/3d-pottery/nwHg1D0riJ1ltA" }] },
-            { title: "Reference Links", links: [{ text: "Info Card", url: "https://www.example.com" }, { text: "Our School District", url: "https://www.crosscountyschools.com/" }, { text: "EAST Initiative Network", url: "https://www.eastinitiative.org/" }] },
-            { title: "Slideshow Presentation", slideshow: true },
-            { title: "Team Contributions:", text: `
-                <ul class="team-list">
-                    <li><p class="name">Alex Convey</p><p class="tasks">Lead Project Manager</p><p class="contribution">Oversaw the project's development, coordinated team efforts, and ensured the timely completion of all deliverables.</p></li>
-                    <li><p class="name">Jaxon Head</p><p class="tasks">Web Developer & Slideshow Coordinator</p><p class="contribution">Developed the website, integrated demo links, and ensured the slideshow ran smoothly during presentations.</p></li>
-                    <li><p class="name">Izabella Andrews</p><p class="tasks">Slideshow Content Creator & Organizer</p><p class="contribution">Created and organized content for the slideshow, ensuring the information was clear, concise, and visually engaging.</p></li>
-                    <li><p class="name">Marques Blacksher</p><p class="tasks">Content Contributor & Organizer</p><p class="contribution">Assisted with organizing the project materials and contributed valuable content for the presentation and resources.</p></li>
-                    <li><p class="name">Jayla McCarty</p><p class="tasks">Project Planning & Scheduling Lead</p><p class="contribution">Managed the project's timeline, ensured that all tasks were on schedule, and created the informational card for the presentation.</p></li>
-                </ul><p>- Thank you for your attention!</p>`
-            }
-        ];
+  <div class="slideshow-bg">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQDVRhXZuCqJGmWMWnMHe1vZBonfKJ6O1Ruh3KjWlKkzHR-H-wy4YP9NVoEa3X_R8DPKLLTNh6QSSEq/embed?start=true&loop=true&delayms=3000" allowfullscreen></iframe>
+  </div>
 
-        let skipDelay = false;
-        document.addEventListener('keydown', (e) => { if (e.key === "Enter") { skipDelay = true; loadAllContent(); } });
+  <script>
+    const sections = [
+      {
+        title: "Intro to the Links",
+        text: "These links refer to the resources we presented. You may access them at any time if you would like."
+      },
+      {
+        title: "Demo and Resources",
+        links: [
+          { text: "ChatGPT Demo", url: "https://www.chatgpt.com" },
+          { text: "AI Images Demo", url: "https://www.freepik.com/pikaso/ai-image-generator?style=noStyle&log-in=google" },
+          { text: "Speech to Text Demo", url: "https://www.speechtexter.com/" }
+        ]
+      },
+      {
+        title: "Google Arts & Culture",
+        links: [
+          { text: "Games Home Menu", url: "https://artsandculture.google.com/play?hl=en" },
+          { text: "In the Rhythm with Nature", url: "https://artsandculture.google.com/experiment/in-rhythm-with-nature/1AHie_rumRxQOA?hl=en" },
+          { text: "Guess the Line", url: "https://artsandculture.google.com/experiment/guess-the-line/ogH0ouxdq_sR6w" },
+          { text: "Cultural Crosswords", url: "https://artsandculture.google.com/experiment/cultural-crosswords/JgGaXxGHVxpn4A" },
+          { text: "3D Pottery", url: "https://artsandculture.google.com/experiment/3d-pottery/nwHg1D0riJ1ltA" }
+        ]
+      },
+      {
+        title: "Reference Links",
+        links: [
+          { text: "Info Card", url: "https://www.example.com" },
+          { text: "Our School District", url: "https://www.crosscountyschools.com/" },
+          { text: "EAST Initiative Network", url: "https://www.eastinitiative.org/" }
+        ]
+      },
+      {
+        title: "Slideshow Presentation",
+        slideshow: true
+      },
+      {
+        title: "Team Contributions:",
+        text: `
+<ul class="team-list">
+  <li>
+    <p class="name">Alex Convey</p>
+    <p class="tasks">Lead Project Manager</p>
+    <p class="contribution">Oversaw the project's development, coordinated team efforts, and ensured the timely completion of all deliverables.</p>
+  </li>
+  <li>
+    <p class="name">Jaxon Head</p>
+    <p class="tasks">Web Developer & Slideshow Coordinator</p>
+    <p class="contribution">Developed the website, integrated demo links, and ensured the slideshow ran smoothly during presentations.</p>
+  </li>
+  <li>
+    <p class="name">Izabella Andrews</p>
+    <p class="tasks">Slideshow Content Creator & Organizer</p>
+    <p class="contribution">Created and organized content for the slideshow, ensuring the information was clear, concise, and visually engaging.</p>
+  </li>
+  <li>
+    <p class="name">Marques Blacksher</p>
+    <p class="tasks">Content Contributor & Organizer</p>
+    <p class="contribution">Assisted with organizing the project materials and contributed valuable content for the presentation and resources.</p>
+  </li>
+  <li>
+    <p class="name">Jayla McCarty</p>
+    <p class="tasks">Project Planning & Scheduling Lead</p>
+    <p class="contribution">Managed the project's timeline, ensured that all tasks were on schedule, and created the informational card for the presentation.</p>
+  </li>
+</ul>
+<p>- Thank you for your attention!</p>
+        `
+      }
+    ];
 
-        function loadAllContent() {
-            sections.forEach((section, index) => {
-                if (!document.querySelector(`#section-${index}`)) {
-                    const div = document.createElement("div");
-                    div.className = "container";
-                    div.id = `section-${index}`;
+    let skipDelay = false;
 
-                    div.innerHTML = `<h1>${section.title}</h1>`;
-                    if (section.text) div.innerHTML += `<p>${section.text}</p>`;
-                    if (section.links) div.innerHTML += `<ul>${section.links.map(link => `<li><a href="${link.url}" target="_blank">${link.text}</a></li>`).join('')}</ul>`;
-                    if (section.slideshow) div.innerHTML += `<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSj3-bMMQkd_NRgHzzFPLe2q7MJzhkRNYyQu3eUWHS9tGkKgYbVYeAZSE20fb79EO2QRGV56jIjODJh/embed?start=false&loop=true&delayms=60000" frameBorder="0" width="100%" height="500"></iframe>`;
-                    
-                    document.body.appendChild(div);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+        skipDelay = true;
+        loadAllContent();
+      }
+    });
 
-                    setTimeout(() => div.classList.add("fade-in"), 50);
-                }
+    function loadAllContent() {
+      sections.forEach((section, index) => {
+        if (!document.querySelector(`#section-${index}`)) {
+          const div = document.createElement("div");
+          div.className = "container";
+          div.id = `section-${index}`;
+
+          const h1 = document.createElement("h1");
+          h1.textContent = section.title;
+          div.appendChild(h1);
+
+          if (section.text) {
+            const p = document.createElement("p");
+            p.innerHTML = section.text;
+            div.appendChild(p);
+          }
+
+          if (section.links) {
+            const ul = document.createElement("ul");
+            section.links.forEach(link => {
+              const li = document.createElement("li");
+              const a = document.createElement("a");
+              a.href = link.url;
+              a.target = "_blank";
+              a.textContent = link.text;
+              li.appendChild(a);
+              ul.appendChild(li);
             });
-        }
+            div.appendChild(ul);
+          }
 
-        sections.forEach((_, index) => {
-            setTimeout(() => { if (!skipDelay && !document.querySelector(`#section-${index}`)) loadAllContent(); }, index * 1000);
-        });
-    </script>
+          if (section.slideshow) {
+            const iframe = document.createElement("iframe");
+            iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vSj3-bMMQkd_NRgHzzFPLe2q7MJzhkRNYyQu3eUWHS9tGkKgYbVYeAZSE20fb79EO2QRGV56jIjODJh/embed?start=false&loop=true&delayms=60000";
+            iframe.style.border = "none";
+            iframe.width = "100%";
+            iframe.height = "500";
+            div.appendChild(iframe);
+          }
+
+          document.body.appendChild(div);
+
+          setTimeout(() => {
+            div.classList.add("fade-in");
+          }, 50);
+        }
+      });
+    }
+
+    sections.forEach((section, index) => {
+      setTimeout(() => {
+        if (!skipDelay && !document.querySelector(`#section-${index}`)) {
+          const div = document.createElement("div");
+          div.className = "container";
+          div.id = `section-${index}`;
+
+          const h1 = document.createElement("h1");
+          h1.textContent = section.title;
+          div.appendChild(h1);
+
+          if (section.text) {
+            const p = document.createElement("p");
+            p.innerHTML = section.text;
+            div.appendChild(p);
+          }
+
+          if (section.links) {
+            const ul = document.createElement("ul");
+            section.links.forEach(link => {
+              const li = document.createElement("li");
+              const a = document.createElement("a");
+              a.href = link.url;
+              a.target = "_blank";
+              a.textContent = link.text;
+              li.appendChild(a);
+              ul.appendChild(li);
+            });
+            div.appendChild(ul);
+          }
+
+          if (section.slideshow) {
+            const iframe = document.createElement("iframe");
+            iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vSj3-bMMQkd_NRgHzzFPLe2q7MJzhkRNYyQu3eUWHS9tGkKgYbVYeAZSE20fb79EO2QRGV56jIjODJh/embed?start=false&loop=true&delayms=60000";
+            iframe.style.border = "none";
+            iframe.width = "100%";
+            iframe.height = "500";
+            div.appendChild(iframe);
+          }
+
+          document.body.appendChild(div);
+
+          setTimeout(() => {
+            div.classList.add("fade-in");
+          }, 50);
+        }
+      }, index * 1000);
+    });
+  </script>
 
 </body>
 </html>
