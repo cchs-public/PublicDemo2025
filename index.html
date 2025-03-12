@@ -4,165 +4,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo Links 2025</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0;
-    padding: 60px 20px 20px;
-    overflow-y: auto;
-    text-align: center;
-    min-height: 100vh;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 0;
+      padding: 60px 20px 20px;
+      overflow-y: auto;
+      text-align: center;
+      min-height: 100vh;
+    }
 
-  .slideshow-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
+    .slideshow-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
 
-  .slideshow-bg iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    transform: translate(-50%, -50%);
-    border: none;
-  }
+    .slideshow-bg iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%);
+      border: none;
+    }
 
-  .container {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    padding: 40px;
-    width: 60%;
-    max-width: 800px;
-    text-align: center;
-    transition: opacity 1s ease, transform 1s ease;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  .fade-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  h1 {
-    color: #5c6bc0;
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
-
-  h6 {
-    color: #0077cc;
-    font-size: 25px;
-  }
-
-  p {
-    font-size: 18px;
-    color: #0077cc;
-    font-weight: normal;
-    line-height: 1.6;
-    margin-top: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-
-  li {
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  a {
-    text-decoration: none;
-    font-size: 24px;
-    color: #0077cc;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: 1px solid #0077cc;
-    transition: all 0.3s ease;
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  a:hover {
-    color: #fff;
-    background-color: #0077cc;
-  }
-
-  a:active {
-    color: #003153;
-    background-color: #004a70;
-  }
-
-  @media (max-width: 768px) {
     .container {
-      width: 90%;
-      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      padding: 40px;
+      width: 60%;
+      max-width: 800px;
+      text-align: center;
+      transition: opacity 1s ease, transform 1s ease;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h1 {
+      color: #5c6bc0;
       font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    h6 {
+      color: #0077cc;
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #0077cc;
+      font-weight: normal;
+      line-height: 1.6;
+      margin-top: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    li {
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      text-align: left;
+      flex-direction: column;
+      align-items: center;
     }
 
     a {
-      font-size: 20px;
+      text-decoration: none;
+      font-size: 24px;
+      color: #0077cc;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #0077cc;
+      transition: all 0.3s ease;
+      display: block;
+      width: 100%;
+      text-align: center;
     }
-  }
 
-  .team-list {
-    text-align: center;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    a:hover {
+      color: #fff;
+      background-color: #0077cc;
+    }
 
-  .team-list li {
-    margin-bottom: 10px;
-  }
+    a:active {
+      color: #003153;
+      background-color: #004a70;
+    }
 
-  .team-list .name {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        padding: 30px;
+      }
 
-  .team-list .tasks {
-    font-size: 18px;
-  }
-</style>
+      h1 {
+        font-size: 28px;
+      }
 
+      a {
+        font-size: 20px;
+      }
+    }
+
+    .team-list {
+      text-align: center;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-list li {
+      margin-bottom: 10px;
+    }
+
+    .team-list .name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .team-list .tasks {
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
 
@@ -173,8 +172,9 @@
   <script>
     const sections = [
       {
-        title: "Intro to the Links",
-        text: "These links refer to the resources we presented. You may access them at any time if you would like."
+title: "Project Resources and Our Team",
+text: "Welcome to our Demo Links page!<br><br>This collection of resources has been carefully curated to showcase the innovative tools and technologies we presented.<br>Feel free to explore these links at your convenience, as they offer a glimpse into the future of AI-powered solutions.<br><br>We will visit the EAST Conference to showcase and present our project, demonstrating its features and impact alongside other schools' EAST programs.<br><br>Thank you for your attention and support!"
+
       },
       {
         title: "Demo and Resources",
@@ -197,54 +197,53 @@
       {
         title: "Reference Links",
         links: [
-          { text: "Info Card", url: "https://www.example.com" },
           { text: "Our School District", url: "https://www.crosscountyschools.com/" },
-          { text: "EAST Initiative Network", url: "https://www.eastinitiative.org/" }
+          { text: "EAST Initiative Network", url: "https://www.eastinitiative.org/" },
+          { text: "Automatically Download Our Slideshow", url: "https://drive.google.com/uc?export=download&id=1ywHc20DzLc6EmQJsLe-15907lZnttvaN" }
         ]
       },
       {
         title: "Slideshow Presentation",
         slideshow: true
       },
-{
-  title: "Team Contributions:",
-  text: `
-    <ul class="team-list">
-      <li>
-        <p class="name">Alex Convey</p>
-        <p class="tasks">Lead Project Manager</p>
-        <p class="contribution">Oversaw the project's development, coordinated team efforts, and ensured the timely completion of all deliverables.</p>
-      </li>
-      <li>
-        <p class="name">Jaxon Head</p>
-        <p class="tasks">Web Developer & Slideshow Coordinator</p>
-        <p class="contribution">Developed the website, integrated demo links, and ensured the slideshow ran smoothly during presentations.</p>
-      </li>
-      <li>
-        <p class="name">Izabella Andrews</p>
-        <p class="tasks">Slideshow Content Creator & Organizer</p>
-        <p class="contribution">Created and organized content for the slideshow, ensuring the information was clear, concise, and visually engaging.</p>
-      </li>
-      <li>
-        <p class="name">Zarria Robinson</p>
-        <p class="tasks">Content Contributor & Researcher</p>
-        <p class="contribution">Assisted with researching project materials and contributed creative content for the presentation and demo resources.</p>
-      </li>
-      <li>
-        <p class="name">Marques Blacksher</p>
-        <p class="tasks">Content Contributor & Organizer</p>
-        <p class="contribution">Assisted with organizing the project materials and contributed valuable content for the presentation and resources.</p>
-      </li>
-      <li>
-        <p class="name">Jayla McCarty</p>
-        <p class="tasks">Project Planning & Scheduling Lead</p>
-        <p class="contribution">Managed the project's timeline, ensured that all tasks were on schedule, and created the informational card for the presentation.</p>
-      </li>
-    </ul>
-    <p>- Thank you for your attention!</p>
-  `
-}
-
+      {
+        title: "Team Contributions:",
+        text: `
+          <ul class="team-list">
+            <li>
+              <p class="name">Alex Convey</p>
+              <p class="tasks">Lead Project Manager</p>
+              <p class="contribution">Oversaw the project's development, coordinated team efforts, and ensured the timely completion of all deliverables.</p>
+            </li>
+            <li>
+              <p class="name">Jaxon Head</p>
+              <p class="tasks">Web Developer & Slideshow Coordinator</p>
+              <p class="contribution">Developed the website, integrated demo links, and ensured the slideshow ran smoothly during presentations.</p>
+            </li>
+            <li>
+              <p class="name">Izabella Andrews</p>
+              <p class="tasks">Slideshow Content Creator & Organizer</p>
+              <p class="contribution">Created and organized content for the slideshow, ensuring the information was clear, concise, and visually engaging.</p>
+            </li>
+            <li>
+              <p class="name">Zarria Robinson</p>
+              <p class="tasks">Content Contributor & Researcher</p>
+              <p class="contribution">Assisted with researching project materials and contributed creative content for the presentation and demo resources.</p>
+            </li>
+            <li>
+              <p class="name">Marques Blacksher</p>
+              <p class="tasks">Content Contributor & Organizer</p>
+              <p class="contribution">Assisted with organizing the project materials and contributed valuable content for the presentation and resources.</p>
+            </li>
+            <li>
+              <p class="name">Jayla McCarty</p>
+              <p class="tasks">Project Planning & Scheduling Lead</p>
+              <p class="contribution">Managed the project's timeline, ensured that all tasks were on schedule, and created the informational card for the presentation.</p>
+            </li>
+          </ul>
+          <p>- Thank you for your attention!</p>
+        `
+      }
     ];
 
     let skipDelay = false;
@@ -351,7 +350,7 @@
             div.classList.add("fade-in");
           }, 50);
         }
-      }, index * 1000);
+      }, 1000 * index);
     });
   </script>
 
