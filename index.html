@@ -353,6 +353,54 @@ text: "Welcome to our Demo Links page!<br><br>This collection of resources has b
       }, 1000 * index);
     });
   </script>
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.ctrlKey && event.key >= '1' && event.key <= '9' || event.key === '0') {
+        let link = '';
 
+        // Map links to keys
+        switch (event.key) {
+          case '1':
+            link = 'https://www.chatgpt.com';
+            break;
+          case '2':
+            link = 'https://www.freepik.com/pikaso/ai-image-generator?style=noStyle&log-in=google';
+            break;
+          case '3':
+            link = 'https://www.speechtexter.com/';
+            break;
+          case '4':
+            link = 'https://artsandculture.google.com/play?hl=en';
+            break;
+          case '5':
+            link = 'https://artsandculture.google.com/experiment/in-rhythm-with-nature/1AHie_rumRxQOA?hl=en';
+            break;
+          case '6':
+            link = 'https://artsandculture.google.com/experiment/guess-the-line/ogH0ouxdq_sR6w';
+            break;
+          case '7':
+            link = 'https://artsandculture.google.com/experiment/cultural-crosswords/JgGaXxGHVxpn4A';
+            break;
+          case '8':
+            link = 'https://artsandculture.google.com/experiment/3d-pottery/nwHg1D0riJ1ltA';
+            break;
+          case '9':
+            link = 'https://www.eastinitiative.org/';
+            break;
+          case '0':
+            link = 'https://www.crosscountyschools.com/';
+            break;
+        }
+
+        // Open the assigned link in a new tab
+        if (link) {
+          window.open(link, '_blank');
+        }
+
+        // Prevent the default action if needed
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
